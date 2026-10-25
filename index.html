@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="An open project exploring physical AI for robotic chemistry and experimental laboratory workflows."
+    />
+    <meta name="theme-color" content="#f3f0e8" />
+    <title>Physical AI Lab Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Physical AI Lab Notes home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Physical AI Lab Notes</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#project">Project</a>
+        <a href="#work">Work</a>
+        <a href="#status">Status</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="eyebrow"><span>OPEN PROJECT</span><span>01 / EXPLORATION</span></div>
+        <h1 id="hero-title">Teaching machines to work with matter.</h1>
+        <p class="hero-copy">
+          An early-stage project exploring how sensing, automation, and machine
+          intelligence can support repeatable chemistry experiments.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#project">Explore the project</a>
+          <a class="button button-secondary" href="#work">View project areas</a>
+        </div>
+
+        <div class="system-map" aria-label="Concept diagram showing the project feedback loop">
+          <div class="map-node"><small>01</small><strong>Plan</strong><span>Define a test</span></div>
+          <div class="map-arrow" aria-hidden="true">→</div>
+          <div class="map-node"><small>02</small><strong>Act</strong><span>Run the protocol</span></div>
+          <div class="map-arrow" aria-hidden="true">→</div>
+          <div class="map-node"><small>03</small><strong>Sense</strong><span>Capture evidence</span></div>
+          <div class="map-arrow" aria-hidden="true">→</div>
+          <div class="map-node map-node-accent"><small>04</small><strong>Learn</strong><span>Choose the next test</span></div>
+        </div>
+      </section>
+
+      <section class="project-section" id="project" aria-labelledby="project-title">
+        <div class="section-label">The project</div>
+        <div class="section-content">
+          <h2 id="project-title">A practical path toward robotic experimentation.</h2>
+          <p class="lead">
+            The aim is to connect laboratory hardware, measurement, and software
+            into a small, observable experimental loop. The first priority is not
+            full autonomy. It is building trustworthy pieces that can be tested,
+            documented, and improved one at a time.
+          </p>
+
+          <div class="principles">
+            <article>
+              <span class="number">01</span>
+              <h3>Start with measurement</h3>
+              <p>Make every action inspectable and every result traceable before adding intelligence.</p>
+            </article>
+            <article>
+              <span class="number">02</span>
+              <h3>Automate carefully</h3>
+              <p>Turn stable manual procedures into bounded, repeatable machine workflows.</p>
+            </article>
+            <article>
+              <span class="number">03</span>
+              <h3>Close the loop</h3>
+              <p>Use evidence from each run to inform the next experiment while keeping human oversight.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="work-section" id="work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-label">Project areas</div>
+            <h2 id="work-title">Follow the work as it develops.</h2>
+          </div>
+          <p>These collections will grow as prototypes, notes, and results become available.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="card-meta"><span>LOG / 001</span><span class="status">COMING SOON</span></div>
+            <div>
+              <h3>Build logs</h3>
+              <p>Hardware decisions, experiment setup, failures, revisions, and what each iteration teaches.</p>
+            </div>
+            <span class="card-link" aria-label="Build logs coming soon">Archive pending <span>↗</span></span>
+          </article>
+
+          <article class="project-card">
+            <div class="card-meta"><span>REPO / 001</span><span class="status">COMING SOON</span></div>
+            <div>
+              <h3>Code</h3>
+              <p>Control software, data tools, simulation work, and reproducible experimental utilities.</p>
+            </div>
+            <span class="card-link" aria-label="Code repository coming soon">Repository pending <span>↗</span></span>
+          </article>
+
+          <article class="project-card project-card-dark">
+            <div class="card-meta"><span>DEMO / 001</span><span class="status status-light">COMING SOON</span></div>
+            <div>
+              <h3>Demos</h3>
+              <p>Short, direct demonstrations of working subsystems and complete experimental cycles.</p>
+            </div>
+            <span class="card-link" aria-label="Project demos coming soon">First demo pending <span>↗</span></span>
+          </article>
+        </div>
+      </section>
+
+      <section class="status-section" id="status" aria-labelledby="status-title">
+        <div>
+          <div class="section-label">Current status</div>
+          <h2 id="status-title">The project is at the starting line.</h2>
+        </div>
+        <div class="status-copy">
+          <p>
+            This site is a public notebook for an exploratory project. The scope,
+            hardware, and first experimental target are still being defined.
+          </p>
+          <div class="status-row">
+            <span class="pulse" aria-hidden="true"></span>
+            <span>Planning and research</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Physical AI Lab Notes</span>
+      <span>Built in the open · <span id="year">2026</span></span>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
