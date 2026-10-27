@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Project charter, candidate modalities, budget envelopes, and 12-week validation plan." />
+    <meta name="theme-color" content="#f3f0e8" />
+    <title>Project Plan — Physical AI Lab Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Physical AI Lab Notes home"><span class="brand-mark" aria-hidden="true"></span><span>Physical AI Lab Notes</span></a>
+      <nav aria-label="Plan navigation"><a href="#charter">Charter</a><a href="#modalities">Methods</a><a href="#budget">Budget</a><a href="#milestones">12 weeks</a></nav>
+    </header>
+    <main id="top">
+      <section class="plan-hero">
+        <div class="eyebrow"><span>PROJECT PLAN</span><span>UPDATED 2026-10-26</span></div>
+        <h1>From question<br />to evidence.</h1>
+        <p class="hero-copy">A bounded starting plan for adaptive materials characterization. Prices are planning estimates, not purchase approvals.</p>
+        <div class="hero-actions"><a class="button button-primary" href="index.html">Back to overview</a><a class="button button-secondary" href="https://github.com/willsuan/physical-ai-lab">Repository</a></div>
+      </section>
+
+      <section class="plan-section" id="charter">
+        <div class="section-label">01 / One-page charter</div>
+        <div class="plan-content">
+          <h2>Can adaptive imaging replace half the scan?</h2>
+          <p class="lead">Build a stationary low-cost optical rig that estimates surface-defect density within 10% of an exhaustive scan while imaging at least 50% fewer fields of view.</p>
+          <div class="fact-grid">
+            <div><span>Scientific target</span><strong>Spatial defect density and texture variation on safe surface coupons</strong></div>
+            <div><span>Primary instrument</span><strong>Fixed camera, controlled illumination, calibrated XY sample positioning</strong></div>
+            <div><span>Ground truth</span><strong>Full raster scan plus scale/resolution target and repeated captures</strong></div>
+            <div><span>Adaptive action</span><strong>Select next region, repeat, recalibrate, or stop</strong></div>
+            <div><span>Baseline</span><strong>Uniform raster with identical image count and fixed ordering</strong></div>
+            <div><span>Core deliverable</span><strong>Traceable data, failure flags, uncertainty, and fixed-vs-adaptive comparison</strong></div>
+          </div>
+          <div class="criteria"><h3>Minimum success criteria</h3><ul><li>Pixel scale and field position remain within 2% across calibration checks.</li><li>Repeated defect-density estimates vary by no more than 5% on a fixed sample.</li><li>Bad focus, saturation, or illumination drift is detected in at least 90% of seeded failures.</li><li>Adaptive sampling reaches within 10% of exhaustive-scan defect density using at least 50% fewer images.</li><li>All raw images retain sample ID, position, settings, calibration version, timestamp, and quality flags.</li></ul></div>
+        </div>
+      </section>
+
+      <section class="plan-section" id="modalities">
+        <div class="section-label">02 / Modality selection</div>
+        <div class="plan-content">
+          <h2>Three credible starts.</h2>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Modality</th><th>Question it can answer</th><th>Calibration</th><th>Samples / ground truth</th><th>Decision</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Optical microscopy</strong></td><td>Where are defects or texture changes, and how much of the surface must be scanned?</td><td>Scale, resolution target, distortion, focus, flat-field, lighting drift, stage repeatability</td><td>Resolution target; patterned or intentionally marked safe coupons; full raster scan</td><td><span class="pill">Start here</span></td></tr>
+              <tr><td><strong>Visible/NIR reflectance</strong></td><td>Can spectral response separate known finishes, coatings, or states?</td><td>Dark signal, white reference, channel response, geometry, integration time, drift</td><td>Stable color/reflectance references plus labeled coupons; trusted comparison instrument if available</td><td>Second modality</td></tr>
+              <tr><td><strong>Electrical impedance</strong></td><td>Can frequency response distinguish approved films or device states?</td><td>Open, short, reference R/C loads, fixture parasitics, contact repeatability, temperature</td><td>Known RC standards first; conductive films/devices only with permission and independent ground truth</td><td>Access-dependent</td></tr>
+            </tbody>
+          </table></div>
+          <p class="note">Why microscopy first: it provides an intuitive spatial decision problem, safe calibration artifacts, direct exhaustive ground truth, and a clear reason for later motion automation.</p>
+        </div>
+      </section>
+
+      <section class="plan-section" id="budget">
+        <div class="section-label">03 / Budget envelopes</div>
+        <div class="plan-content">
+          <h2>Three builds. One ceiling.</h2>
+          <p class="lead">The figures below are planning allowances in USD before tax and shipping. Vendor-linked prices were checked on October 26, 2026; all other lines are reserved allowances to validate before buying.</p>
+          <div class="budget-grid">
+            <article class="budget-card"><div class="budget-head"><div><span>BASELINE</span><h3>Stationary rig</h3></div><strong>$650</strong></div><ul><li><span>Camera Module 3</span><b>$25</b></li><li><span>Pi Zero 2 W</span><b>$15</b></li><li><span>Controlled illumination</span><b>$30</b></li><li><span>Close-focus optics</span><b>$30</b></li><li><span>Rigid stand / enclosure</span><b>$70</b></li><li><span>Manual XY stage</span><b>$70</b></li><li><span>NBS resolution target</span><b>$120</b></li><li><span>Safe sample coupons</span><b>$50</b></li><li><span>Power, storage, cables</span><b>$45</b></li><li><span>Fixtures / fabrication</span><b>$45</b></li><li><span>Contingency</span><b>$150</b></li></ul></article>
+            <article class="budget-card budget-card-featured"><div class="budget-head"><div><span>INTEGRATION</span><h3>Robot-assisted</h3></div><strong>$1,279</strong></div><ul><li><span>Stationary rig</span><b>$650</b></li><li><span>SO-ARM101 assembled arm</span><b>$299</b></li><li><span>Sample end-effector</span><b>$75</b></li><li><span>Rigid work deck / tray</span><b>$75</b></li><li><span>Stop / interlock hardware</span><b>$55</b></li><li><span>Second camera</span><b>$25</b></li><li><span>Integration contingency</span><b>$100</b></li></ul></article>
+            <article class="budget-card"><div class="budget-head"><div><span>STRETCH</span><h3>Multimodal workcell</h3></div><strong>$1,949</strong></div><ul><li><span>Robot-assisted rig</span><b>$1,279</b></li><li><span>18-channel spectral sensor</span><b>$70</b></li><li><span>Reflectance-reference allowance</span><b>$150</b></li><li><span>Motorized XY stage allowance</span><b>$250</b></li><li><span>Optical / sample fixtures</span><b>$100</b></li><li><span>Stretch contingency</span><b>$100</b></li></ul></article>
+          </div>
+          <p class="note">Gate: buy nothing until the sample set, measurement question, calibration method, and existing equipment inventory are reviewed. Reusing an existing laptop, Pi, camera, or lab target reduces these envelopes.</p>
+        </div>
+      </section>
+
+      <section class="plan-section" id="milestones">
+        <div class="section-label">04 / Twelve weeks</div>
+        <div class="plan-content">
+          <h2>Evidence gates before complexity.</h2>
+          <div class="timeline">
+            <article><span>WEEKS 1–2</span><h3>Freeze the question</h3><p>Confirm sample set, safety boundary, existing equipment, ground truth, and data permissions. Write the schema and acceptance tests before assembly.</p><strong>Gate: one approved sample set + measurement protocol</strong></article>
+            <article><span>WEEKS 3–4</span><h3>Calibrate the stationary rig</h3><p>Measure scale, resolution, focus behavior, illumination uniformity, repeatability, and drift. Seed bad-focus and saturation cases.</p><strong>Gate: ≤2% scale drift; ≥90% seeded-failure detection</strong></article>
+            <article><span>WEEKS 5–6</span><h3>Build the exhaustive baseline</h3><p>Capture full raster scans, version calibration, and create defect/texture labels with provenance. Repeat samples across days.</p><strong>Gate: ≤5% repeated estimate variation</strong></article>
+            <article><span>WEEKS 7–8</span><h3>Add uncertainty</h3><p>Implement a simple interpretable baseline and calibrated uncertainty. Evaluate held-out coupons and out-of-distribution flags.</p><strong>Gate: confidence calibration reported, not assumed</strong></article>
+            <article><span>WEEKS 9–10</span><h3>Select the next view</h3><p>Compare uniform, random, and uncertainty-guided spatial sampling on replayed data before automating motion.</p><strong>Gate: within 10% of full scan using ≥50% fewer views</strong></article>
+            <article><span>WEEKS 11–12</span><h3>Integrate only what helps</h3><p>Add stage or arm motion only if manual positioning limits coverage or repeatability. Publish failures and fixed-vs-adaptive results.</p><strong>Gate: measurable benefit from motion, or defer it</strong></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="plan-section sources-section" id="sources">
+        <div class="section-label">05 / Evidence</div>
+        <div class="plan-content">
+          <h2>Sources and price anchors.</h2>
+          <ul class="source-list">
+            <li><a href="https://www.nist.gov/mml/mmsd/data-and-ai-driven-materials-science-group/autonomous-methods">NIST Autonomous Methods</a><span>Closed-loop selection, physical priors, quantified uncertainty, human oversight</span></li>
+            <li><a href="https://www.nist.gov/programs-projects/autonomous-systems-materials-research-and-metrology-accelerating-discovery-and">NIST Autonomous Systems for Materials Research and Metrology</a><span>Active measurement and knowledge-rich region selection</span></li>
+            <li><a href="https://www.raspberrypi.com/products/camera-module-3/">Raspberry Pi Camera Module 3</a><span>12 MP autofocus camera, listed from $25</span></li>
+            <li><a href="https://www.raspberrypi.com/products/">Raspberry Pi products</a><span>Pi Zero 2 W listed from $15</span></li>
+            <li><a href="https://www.thorlabs.com/catalogpages/V21/1737.pdf">Thorlabs NBS / USAF resolution targets</a><span>NBS negative target listed at $120</span></li>
+            <li><a href="https://www.seeedstudio.com/SO-101-Assembled-Kit-Pro-p-6691.html">Seeed Studio SO-ARM101 assembled kit</a><span>Listed at $299</span></li>
+            <li><a href="https://www.sparkfun.com/sparkfun-triad-spectroscopy-sensor-as7265x-qwiic.html">SparkFun AS7265x Spectral Triad</a><span>18 channels from 410–940 nm, listed at $69.95</span></li>
+            <li><a href="https://www.oceanoptics.com/faq/accessories-faq/">Ocean Optics reflectance-standard guidance</a><span>Reference choice and signal-to-noise considerations</span></li>
+            <li><a href="https://digilent.com/shop/analog-discovery-3/">Digilent Analog Discovery 3</a><span>Optional impedance platform; listed at $379, not included in the BOM</span></li>
+          </ul>
+          <div class="criteria"><h3>Intentionally unresolved</h3><ul><li>No hardware purchase is approved.</li><li>No lab sample or dataset access is assumed.</li><li>No hazardous chemistry is in scope.</li><li>No robot is required until a measured bottleneck justifies it.</li><li>No publication venue or novelty claim has been selected.</li></ul></div>
+        </div>
+      </section>
+    </main>
+    <footer><span>Physical AI Lab Notes</span><a href="#top">Back to top ↑</a></footer>
+  </body>
+</html>

@@ -3,151 +3,80 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="An open project exploring physical AI for robotic chemistry and experimental laboratory workflows."
-    />
+    <meta name="description" content="An open project exploring adaptive, uncertainty-aware materials characterization with low-cost instrumentation." />
     <meta name="theme-color" content="#f3f0e8" />
-    <title>Physical AI Lab Notes</title>
+    <title>Physical AI Lab Notes — Adaptive Materials Characterization</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Physical AI Lab Notes home">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>Physical AI Lab Notes</span>
-      </a>
-      <nav aria-label="Primary navigation">
-        <a href="#project">Project</a>
-        <a href="#work">Work</a>
-        <a href="#status">Status</a>
-      </nav>
+      <a class="brand" href="#top" aria-label="Physical AI Lab Notes home"><span class="brand-mark" aria-hidden="true"></span><span>Physical AI Lab Notes</span></a>
+      <nav aria-label="Primary navigation"><a href="#project">Project</a><a href="#methods">Methods</a><a href="#work">Work</a><a href="plan.html">Plan</a></nav>
     </header>
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="eyebrow"><span>OPEN PROJECT</span><span>01 / EXPLORATION</span></div>
-        <h1 id="hero-title">Teaching machines to work with matter.</h1>
-        <p class="hero-copy">
-          An early-stage project exploring how sensing, automation, and machine
-          intelligence can support repeatable chemistry experiments.
-        </p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#project">Explore the project</a>
-          <a class="button button-secondary" href="#work">View project areas</a>
-        </div>
-
-        <div class="system-map" aria-label="Concept diagram showing the project feedback loop">
-          <div class="map-node"><small>01</small><strong>Plan</strong><span>Define a test</span></div>
-          <div class="map-arrow" aria-hidden="true">→</div>
-          <div class="map-node"><small>02</small><strong>Act</strong><span>Run the protocol</span></div>
-          <div class="map-arrow" aria-hidden="true">→</div>
-          <div class="map-node"><small>03</small><strong>Sense</strong><span>Capture evidence</span></div>
-          <div class="map-arrow" aria-hidden="true">→</div>
-          <div class="map-node map-node-accent"><small>04</small><strong>Learn</strong><span>Choose the next test</span></div>
+        <div class="eyebrow"><span>OPEN PROJECT</span><span>02 / DEFINITION</span></div>
+        <h1 id="hero-title">Measure less.<br />Learn more.</h1>
+        <p class="hero-copy">A low-cost physical-AI workcell for calibrated materials measurement, uncertainty-aware interpretation, and adaptive selection of what to measure next.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#project">Read the charter</a><a class="button button-secondary" href="plan.html">Open the 12-week plan</a></div>
+        <div class="system-map" aria-label="Concept diagram showing the adaptive measurement loop">
+          <div class="map-node"><small>01</small><strong>Select</strong><span>Choose the next view</span></div><div class="map-arrow" aria-hidden="true">→</div>
+          <div class="map-node"><small>02</small><strong>Measure</strong><span>Capture data + metadata</span></div><div class="map-arrow" aria-hidden="true">→</div>
+          <div class="map-node"><small>03</small><strong>Validate</strong><span>Reject drift and bad data</span></div><div class="map-arrow" aria-hidden="true">→</div>
+          <div class="map-node map-node-accent"><small>04</small><strong>Update</strong><span>Reduce uncertainty</span></div>
         </div>
       </section>
 
       <section class="project-section" id="project" aria-labelledby="project-title">
-        <div class="section-label">The project</div>
+        <div class="section-label">Project charter</div>
         <div class="section-content">
-          <h2 id="project-title">A practical path toward robotic experimentation.</h2>
-          <p class="lead">
-            The aim is to connect laboratory hardware, measurement, and software
-            into a small, observable experimental loop. The first priority is not
-            full autonomy. It is building trustworthy pieces that can be tested,
-            documented, and improved one at a time.
-          </p>
-
+          <h2 id="project-title">Adaptive microscopy is the first test case.</h2>
+          <p class="lead">The working question is whether a low-cost imaging rig can estimate surface-defect density to within 10% of an exhaustive scan while imaging at least 50% fewer fields of view. A robot is optional infrastructure; calibrated evidence is the core contribution.</p>
+          <dl class="charter-grid">
+            <div><dt>Instrument</dt><dd>Fixed optical camera, controlled lighting, calibrated XY positioning</dd></div>
+            <div><dt>Safe samples</dt><dd>Reference targets and nonhazardous polymer or coated coupons</dd></div>
+            <div><dt>Ground truth</dt><dd>Exhaustive raster scan, resolution target, and repeat measurements</dd></div>
+            <div><dt>Decision</dt><dd>Stop, rescan, recalibrate, or select the next informative region</dd></div>
+          </dl>
           <div class="principles">
-            <article>
-              <span class="number">01</span>
-              <h3>Start with measurement</h3>
-              <p>Make every action inspectable and every result traceable before adding intelligence.</p>
-            </article>
-            <article>
-              <span class="number">02</span>
-              <h3>Automate carefully</h3>
-              <p>Turn stable manual procedures into bounded, repeatable machine workflows.</p>
-            </article>
-            <article>
-              <span class="number">03</span>
-              <h3>Close the loop</h3>
-              <p>Use evidence from each run to inform the next experiment while keeping human oversight.</p>
-            </article>
+            <article><span class="number">01</span><h3>Calibrate first</h3><p>Measure resolution, scale, illumination stability, repeatability, and drift before training a model.</p></article>
+            <article><span class="number">02</span><h3>Keep uncertainty</h3><p>Return confidence and failure flags with every result—not only a label or defect count.</p></article>
+            <article><span class="number">03</span><h3>Earn the robot</h3><p>Add motion only when it improves coverage, repeatability, throughput, or measurement quality.</p></article>
           </div>
+        </div>
+      </section>
+
+      <section class="work-section" id="methods" aria-labelledby="methods-title">
+        <div class="section-heading"><div><div class="section-label">Candidate modalities</div><h2 id="methods-title">One first. Two held in reserve.</h2></div><p>The first modality is a recommendation, not a purchase decision. Each option still needs sample access and calibration review.</p></div>
+        <div class="method-grid">
+          <article class="method-card method-card-selected"><div class="card-meta"><span>01 / OPTICAL</span><span class="status status-selected">RECOMMENDED</span></div><h3>Adaptive microscopy</h3><p>Map defects or texture across a surface, choosing new fields of view from uncertainty and spatial variation.</p><ul><li>Calibrate scale, resolution, distortion, illumination, and focus</li><li>Use safe reference targets and surface coupons</li><li>Ground truth with a complete raster scan</li></ul></article>
+          <article class="method-card"><div class="card-meta"><span>02 / SPECTRAL</span><span class="status">CANDIDATE</span></div><h3>Reflectance sensing</h3><p>Compare visible/NIR response across coatings, finishes, or known reference patches under fixed geometry.</p><ul><li>Calibrate dark signal, white reference, channel response, and drift</li><li>Requires stable illumination and reference standards</li><li>Useful as a second modality after imaging works</li></ul></article>
+          <article class="method-card"><div class="card-meta"><span>03 / ELECTRICAL</span><span class="status">CANDIDATE</span></div><h3>Impedance mapping</h3><p>Measure low-voltage frequency response of conductive films, devices, or known RC standards.</p><ul><li>Calibrate open, short, and reference loads</li><li>Requires repeatable contacts and approved samples</li><li>Strong fit only if lab access provides a real question</li></ul></article>
         </div>
       </section>
 
       <section class="work-section" id="work" aria-labelledby="work-title">
-        <div class="section-heading">
-          <div>
-            <div class="section-label">Project areas</div>
-            <h2 id="work-title">Follow the work as it develops.</h2>
-          </div>
-          <p>These collections will grow as prototypes, notes, and results become available.</p>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="card-meta"><span>LOG / 001</span><span class="status">COMING SOON</span></div>
-            <div>
-              <h3>Build logs</h3>
-              <p>Hardware decisions, experiment setup, failures, revisions, and what each iteration teaches.</p>
-            </div>
-            <span class="card-link" aria-label="Build logs coming soon">Archive pending <span>↗</span></span>
-          </article>
-
-          <article class="project-card">
-            <div class="card-meta"><span>REPO / 001</span><span class="status">COMING SOON</span></div>
-            <div>
-              <h3>Code</h3>
-              <p>Control software, data tools, simulation work, and reproducible experimental utilities.</p>
-            </div>
-            <span class="card-link" aria-label="Code repository coming soon">Repository pending <span>↗</span></span>
-          </article>
-
-          <article class="project-card project-card-dark">
-            <div class="card-meta"><span>DEMO / 001</span><span class="status status-light">COMING SOON</span></div>
-            <div>
-              <h3>Demos</h3>
-              <p>Short, direct demonstrations of working subsystems and complete experimental cycles.</p>
-            </div>
-            <span class="card-link" aria-label="Project demos coming soon">First demo pending <span>↗</span></span>
-          </article>
+        <div class="section-heading"><div><div class="section-label">Technical case study</div><h2 id="work-title">Publish the whole evidence chain.</h2></div><p>Results remain placeholders until the corresponding measurements or artifacts actually exist.</p></div>
+        <div class="project-grid project-grid-six">
+          <article class="project-card"><div class="card-meta"><span>01</span><span class="status">DEFINED</span></div><div><h3>Overview</h3><p>Question, scope, safety boundary, and the reason adaptive measurement matters.</p></div><a class="card-link" href="plan.html#charter">Read charter <span>↗</span></a></article>
+          <article class="project-card"><div class="card-meta"><span>02</span><span class="status">PLANNED</span></div><div><h3>Methods</h3><p>Instrument geometry, calibration, acquisition, quality control, and inference.</p></div><a class="card-link" href="plan.html#modalities">Compare methods <span>↗</span></a></article>
+          <article class="project-card"><div class="card-meta"><span>03</span><span class="status">PENDING</span></div><div><h3>Data</h3><p>Raw measurements, metadata schema, calibration versions, and failure flags.</p></div><span class="card-link" aria-label="Data coming later">No dataset yet <span>—</span></span></article>
+          <article class="project-card"><div class="card-meta"><span>04</span><span class="status">PENDING</span></div><div><h3>Results</h3><p>Fixed-versus-adaptive comparisons, uncertainty, repeatability, and ablations.</p></div><span class="card-link" aria-label="Results coming later">No results yet <span>—</span></span></article>
+          <article class="project-card project-card-dark"><div class="card-meta"><span>05</span><span class="status status-light">OPEN LOG</span></div><div><h3>Failures</h3><p>Calibration misses, bad data, negative results, and design changes—kept visible.</p></div><span class="card-link" aria-label="Failure log coming later">First build pending <span>—</span></span></article>
+          <article class="project-card"><div class="card-meta"><span>06</span><span class="status">LIVE</span></div><div><h3>Code & demos</h3><p>Source, experiment definitions, analysis tools, and verified demonstrations.</p></div><a class="card-link" href="https://github.com/willsuan/physical-ai-lab">Open repository <span>↗</span></a></article>
         </div>
       </section>
 
       <section class="status-section" id="status" aria-labelledby="status-title">
-        <div>
-          <div class="section-label">Current status</div>
-          <h2 id="status-title">The project is at the starting line.</h2>
-        </div>
-        <div class="status-copy">
-          <p>
-            This site is a public notebook for an exploratory project. The scope,
-            hardware, and first experimental target are still being defined.
-          </p>
-          <div class="status-row">
-            <span class="pulse" aria-hidden="true"></span>
-            <span>Planning and research</span>
-          </div>
-        </div>
+        <div><div class="section-label">Current status</div><h2 id="status-title">Defined, not built.</h2></div>
+        <div class="status-copy"><p>The charter, candidate methods, budget envelopes, and evaluation plan are public. No hardware purchase, lab-data access, external publication, or completed prototype is implied.</p><div class="status-row"><span class="pulse" aria-hidden="true"></span><span>Phase 0 · Definition and review</span></div></div>
       </section>
     </main>
-
-    <footer>
-      <span>Physical AI Lab Notes</span>
-      <span>Built in the open · <span id="year">2026</span></span>
-    </footer>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    <footer><span>Physical AI Lab Notes</span><span>Built in the open · <span id="year">2026</span></span></footer>
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   </body>
 </html>
